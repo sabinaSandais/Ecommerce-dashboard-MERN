@@ -19,7 +19,7 @@ const Navbar = () => {
           <Link to="/profile" > Profile</Link>
         </li>
         <li>
-          <Link to="/signup" > Register</Link>
+          <Link to="/signup" > Sign Up</Link>
         </li>
       </ul>
     </div>
