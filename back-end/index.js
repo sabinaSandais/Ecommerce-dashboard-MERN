@@ -1,15 +1,20 @@
 const express = require("express");
+const cors = require('cors');
 require("./db/config");
-const User = require("./db/User"); // Fix: Change the import statement to match the correct casing
+const User = require("./db/User"); 
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post("/register", async (req, res) => {
-  let user = new User(req.body);
-  console.log(user);
-  let result = await user.save();
+  let user=new User(req.body);
+  let result= await user.save();
   res.send(result);
+  
 });
 
-app.listen(3000);
+app.listen(3002, () => {
+  console.log('Server is running on port 3002');
+});
+// app.listen(3001);
